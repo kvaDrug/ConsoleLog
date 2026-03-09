@@ -16,9 +16,11 @@ import os.log
 /// when running the app in "Wait for executable to be launched"
 /// mode: https://stackoverflow.com/q/77149509/1746142
 /// or attaching to process.
-nonisolated
-    public func debugLog(_ items: Any..., separator: String = " ", terminator: String = "\n")
-{
+public nonisolated func debugLog(
+    _ items: Any...,
+    separator: String = " ",
+    terminator: String = "\n"
+) {
     #if DEBUG
     let descriptions = items.map { "\($0)" }
     let message = descriptions.joined(separator: separator).appending(terminator)
@@ -29,9 +31,11 @@ nonisolated
 
 /// A strong log that will print not only when running in  Xcode, but also in Console app. For Release builds, if we want to output
 /// some debug information there. DO NOT EXPOSE ANY PRIVATE DATA!
-nonisolated
-    public func consoleLog(_ items: Any..., separator: String = " ", terminator: String = "\n")
-{
+public nonisolated func consoleLog(
+    _ items: Any...,
+    separator: String = " ",
+    terminator: String = "\n"
+) {
     let descriptions = items.map { "\($0)" }
     let message = descriptions.joined(separator: separator).appending(terminator)
     let logger = Logger(subsystem: "com.ajtech.watchface.consoleLog", category: "Public")
