@@ -6,7 +6,7 @@ Minimal logging helpers for Apple platforms using `os.Logger`. Logs directly to 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/<your-org>/ConsoleLog.git", from: "1.0.0")
+    .package(url: "https://github.com/kvaDrug/ConsoleLog.git", from: "1.0.0")
 ]
 ```
 
